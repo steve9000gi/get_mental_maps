@@ -92,9 +92,9 @@ def get_maps(sort_index):
     return sorted(maps, key=lambda k: k[sort_index])
 
 def print_header():
-    print ("     Location of school                  Size (bytes)     " +
+    print ("      Location of school                  Size (bytes)     " +
            "Last modified")
-    print "_" * 74
+    print "_" * 75
 
 def get_pad1(n):
     """ Whitespace padding for right-aligning printed integers.
