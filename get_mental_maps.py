@@ -47,10 +47,10 @@
 
 import sys
 import os
-import psycopg2
 import collections
 import json
 import string
+import psycopg2
 
 def connect():
     """ Connect to ssm PostgreSQL database
@@ -69,8 +69,7 @@ def connect():
                                 user = "")
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
-    finally:
-        return conn
+    return conn
 
 def get_maps(sort_index):
     """ Get a list of tuples from the PostgreSQL database, each tuple of which
@@ -133,13 +132,13 @@ def print_row(n, loc, sz, last_modified):
             Nothing
     """
     print (get_pad1(n) + str(n) + ". " + loc  + get_pad2(loc, sz) +
-    sz + " " * 13 + last_modified)
+           sz + " " * 13 + last_modified)
 
 def build_output_file_path(dir, loc, id):
     """ Create a full path for an ssm file.
 
         Args:
-            dir: string path to directory, either relative or absolute. No 
+            dir: string path to directory, either relative or absolute. No
             checking to see if the path is valid.
             loc: string place name to be used in assembling the file name.
             id: integer to be used in assembling the file name.
@@ -167,7 +166,7 @@ def write_map_to_file(dir, loc, map_id, d):
     """
     if not os.path.exists(dir):
         os.makedirs(dir)
-    path =  build_output_file_path(dir, loc, map_id)
+    path = build_output_file_path(dir, loc, map_id)
     with open(path, "w") as f:
         json.dump(d, f, sort_keys=True, indent=4)
         f.close()
