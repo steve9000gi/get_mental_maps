@@ -93,7 +93,7 @@ tracking info to stdout and write the dict to file in .json format.
 </p>
 
 <p>
-from PostGres database<br>
+From PostgreSQL database:<br>
 &rarr; extract list of tuples<br>
 &rarr; examine each tuple of metadata + dict<br>
 &rarr; write dict with key "schoolLocation" to file

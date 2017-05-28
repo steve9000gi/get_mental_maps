@@ -39,7 +39,7 @@
     For each one of those ssms that meets this criterion, print some useful
     tracking info to stdout and write the dict to file in .json format.
 
-    from PostGres database
+    From PostgreSQL database:
     -> extract list of tuples
     -> examine each tuple of metadata + dict
     -> write dict with key "schoolLocation" to file
